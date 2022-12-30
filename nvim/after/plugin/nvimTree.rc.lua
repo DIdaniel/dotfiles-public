@@ -13,9 +13,6 @@ nvim_tree.setup {
     enable = true,
     auto_open = true,
   },
-  -- update_to_buf_dir = {
-  --   enable = false,
-  -- },
   disable_netrw = false,
   hijack_netrw = true,
   -- open_on_setup = false,

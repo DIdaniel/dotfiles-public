@@ -12,6 +12,6 @@ git.setup({
     -- Opens a new diff that compares against the current index
     diff = "<Leader>gd",
     -- Close git diff
-    diff_close = "<Leader>gD"
+    diff_close = "<Leader>q"
   }
 })

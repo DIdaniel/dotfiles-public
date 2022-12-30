@@ -10,11 +10,13 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer
 
   -- theme
-  use "EdenEast/nightfox.nvim"
-  -- use 'bluz71/vim-nightfly-colors'
+  -- use "EdenEast/nightfox.nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
   -- use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
+  -- use { "catppuccin/nvim", as = "catppuccin" }
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use 'folke/lsp-colors.nvim'
   use 'nvim-lualine/lualine.nvim' -- statusline
   use 'kyazdani42/nvim-web-devicons'
   use 'L3MON4D3/LuaSnip' -- Lua snippet
@@ -42,7 +44,7 @@ packer.startup(function(use)
 
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
-  use 'p00f/nvim-ts-rainbow' -- 괄호
+  use 'p00f/nvim-ts-rainbow' -- Find bracket scope
 
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'nvim-telescope/telescope.nvim'
@@ -54,8 +56,6 @@ packer.startup(function(use)
   -- prettier & lint
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
-  use 'MunifTanjim/eslint.nvim'
-  -- use 'jayp0521/mason-null-ls.nvim' ----- After Masonㅓ
 
   -- GitSigns
   use 'lewis6991/gitsigns.nvim'
@@ -71,8 +71,11 @@ packer.startup(function(use)
   use 'sindrets/diffview.nvim' -- diff view
 
   -- Comment
-  use 'tpope/vim-commentary'
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use { 'numToStr/Comment.nvim',
+    requires = {
+      'JoosepAlviste/nvim-ts-context-commentstring'
+    }
+  }
 
   use 'mg979/vim-visual-multi' -- multi cursor
 
@@ -81,7 +84,4 @@ packer.startup(function(use)
 
   -- single toggle term
   use { "akinsho/toggleterm.nvim", tag = '*' }
-
-  -- emmet
-  use 'mattn/emmet-vim'
 end)
